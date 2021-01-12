@@ -71,4 +71,3 @@ while(True):
     moves = json.loads(data['moves'])
     action = json.dumps(OthelloAction.getAction(board,moves))
     payload = {'action' : action,'player':player}
-

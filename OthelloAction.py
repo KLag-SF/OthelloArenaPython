@@ -1,5 +1,9 @@
 import random
+import AlphaBeta
 
+ALPHA = 0
+BETA = 0
+DEPTH = 3
 """
 引数について
 
@@ -12,6 +16,6 @@ moves:現在の合法手の一覧
 
 def getAction(board,moves):
 	# 渡されたMovesの中からランダムで返り値として返却する。
-	# index = random.randrange(len(moves))
-	
-	return moves[index]
+	#index = random.randrange(len(moves))
+
+	return AlphaBeta.execute(board, moves, DEPTH, ALPHA, BETA)

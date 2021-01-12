@@ -34,5 +34,6 @@ while(True):
 			break
 	else:
 		player = player * -1
+	input("Press Enter key to next....")
 
 print('正常に終了しました。')		
