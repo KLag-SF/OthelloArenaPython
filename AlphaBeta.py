@@ -1,7 +1,11 @@
-import Play
 import OthelloLogic
+import AuthCheck
+import requests
 
-PLAYER = Play.player
+headers = AuthCheck.auth_check("http://tdu-othello.xyz/api")
+r = requests.post("http://tdu-othello.xyz/api/where", headers=headers)
+data = r.json()
+PLAYER = data['player']
 ENEMY = PLAYER * -1
 SIZE = 8
 
