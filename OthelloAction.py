@@ -1,5 +1,5 @@
 import random
-import AlphaBetagit as ab
+import AlphaBeta as ab
 import sys
 
 DEPTH = 6
