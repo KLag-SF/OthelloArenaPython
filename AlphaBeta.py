@@ -1,10 +1,12 @@
 import OthelloLogic as ol
 import sys
 
-SIDE = -1
+# SIDE: BLACK = 1, WHITE = -1
+SIDE = 1
+# Board size
 SIZE = 8
-depth = 0
 
+# Alpha-Beta search
 def ab(board, moves, lim, a, b, side):
     # print(moves)
     if lim == 0:
@@ -38,18 +40,18 @@ def sort(board, moves, lim):
     for i in scores:
         res.append(i[0])
 
-    return res 
+    return list(reversed(res))
 
 def calc_eval_score(board):
     board_score = [
-        [ 30, -18,  0, -1, -1,  0, -18,  30],
-        [-18, -25, -3, -3, -3, -3, -25, -18],
+        [ 30, -12,  0, -1, -1,  0, -12,  30],
+        [-12, -15, -3, -3, -3, -3, -15, -12],
         [  0,  -3,  0, -1, -1,  0,  -3,   0],
-        [ -1,  -3, -1, -1, -1, -1,  -3,  -1],
-        [ -1,  -3, -1, -1, -1, -1,  -3,  -1],
+        [ -1,  -3, -1,  0,  0, -1,  -3,  -1],
+        [ -1,  -3, -1,  0,  0, -1,  -3,  -1],
         [  0,  -3,  0, -1, -1,  0,  -3,   0],
-        [-18, -25, -3, -3, -3, -3, -25, -18],
-        [ 30, -18,  0, -1, -1,  0, -18,  30]
+        [-12, -15, -3, -3, -3, -3, -15, -12],
+        [ 30, -12,  0, -1, -1,  0, -12,  30]
     ]
     eval_score = 0
     for x in range(8):

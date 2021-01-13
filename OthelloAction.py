@@ -19,7 +19,7 @@ def getAction(board, moves):
 	sorted_move = ab.sort(board, moves, DEPTH)
 	print(sorted_move)
 	puttable = len(sorted_move)
-	move_candidate = sorted_move[-1]
+	move_candidate = sorted_move[0]
 
 	print("Candidate:" + str(move_candidate))
 
@@ -33,6 +33,7 @@ def getAction(board, moves):
 	print("Is candidate X? " + str(is_x))
 	print("Is candidate C? " + str(is_c))
 
+	# Avoid to put on dangerous point(X, C)
 	if is_x:
 		for p in sorted_move:
 			if p not in x_point:
